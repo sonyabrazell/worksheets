@@ -59,6 +59,42 @@
 # print(new_phrase.title())
 
 # 3. Compress a string of characters
-#
+# In order to compress a string there are several steps that must be done. Essentially you will need to iterate over each letter
+# 
 
-long_string = 'aaabbbbbcccccdddeeeeeeefffgggggggggggggghhhhhhhhiiiiiiiijjjjjj'
+# def compress(string):
+#     index = 0
+#     compressed = ""
+#     len_str = len(string)
+#     while index != len_str:
+#         count = 1
+#         while (index < len_str-1) and (string[index]) == string[index+1]:
+#             count = count + 1
+#             index = index + 1
+#         if count == 1:
+#             compressed += str(string[index])
+#         else:
+#             compressed += str(string[index]) + str(count)
+#         index = index + 1
+#     return compressed
+
+# string = 'aaabbbbbcccccdddeeeeeeefffgggggggggggggghhhhhhhhiiiiiiiijjjjjj'
+# print(compress(string))
+
+# 4. Bonus challenge - Palindrome
+    # function argument is start at the end, count down to the beginning, stepping backwards one at a time" 
+    #slice notation has three parts, start, stop, step. [::3] beginning to end, counting by 3, [::-3] end to
+    #beginning counting down by three
+
+def palindrome_checker(str):
+    return str == user_input[::-1]
+
+user_input = input('Please enter your palindrome: ')
+
+str = user_input
+output = palindrome_checker(str)
+
+if output:
+    print("This is a palindrome.")
+else:
+    print("This is not a palindrome.")
