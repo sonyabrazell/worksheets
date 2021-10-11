@@ -83,18 +83,50 @@
 
 # 4. Bonus challenge - Palindrome
     # function argument is start at the end, count down to the beginning, stepping backwards one at a time" 
-    #slice notation has three parts, start, stop, step. [::3] beginning to end, counting by 3, [::-3] end to
-    #beginning counting down by three
+    #example: slice notation has three parts, start, stop, step. [::3] beginning to end, counting by 3, [::-3] end to
+    #beginning counting down by three. 
 
-def palindrome_checker(str):
-    return str == user_input[::-1]
+    # To check if a user input is a palindrome, create a function that compares the user input with its own reverse.
+    # if they match, then the input is a palindrome. If they don't, then it is not a palindrome. 
 
-user_input = input('Please enter your palindrome: ')
+# def palindrome_checker(str):
+#     return str == user_input[::-1]
 
-str = user_input
-output = palindrome_checker(str)
+# user_input = input('Please enter your palindrome: ')
 
-if output:
-    print("This is a palindrome.")
+# str = user_input
+# output = palindrome_checker(str)
+
+# if output:
+#     print("This is a palindrome.")
+# else:
+#     print("This is not a palindrome.")
+
+# worksheet two
+
+# 1. Happy Numbers
+# A happy number starts with a positive integer, replacing the sums of the squares of its digits, and repeating
+# repeating the process until the number equals 1. Ex. 10. 1^2 + 0^2 = 1 If a number is not happy, it is sad.
+# Start with an integer. If number is greater than 0, calculate remainder by dividing by 10. Calculate square of 
+# remainder and add it to a variable sum. Divide by 10. Keep repeating until the sum of the square of all digits 
+# have been calculated. Return sum. Then define and 
+
+def is_happy(num):
+    rem = sum = 0;
+
+    while (num>0):
+        rem = num%10;
+        sum = sum + (rem*rem);
+        num = num//10;
+    return sum;
+
+num = int(input("Please enter number to check: "))
+result=num;
+
+while(result !=1 and result !=4):
+    result = is_happy(result)
+
+if(result == 1):
+    print(str(num) + " is a happy number");
 else:
-    print("This is not a palindrome.")
+    print(str(num)+ " is a sad number");
