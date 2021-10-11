@@ -1,3 +1,4 @@
+import random
 # problem solving worksheet
 
 # 1. Reverse a string 
@@ -109,24 +110,81 @@
 # repeating the process until the number equals 1. Ex. 10. 1^2 + 0^2 = 1 If a number is not happy, it is sad.
 # Start with an integer. If number is greater than 0, calculate remainder by dividing by 10. Calculate square of 
 # remainder and add it to a variable sum. Divide by 10. Keep repeating until the sum of the square of all digits 
-# have been calculated. Return sum. Then define and 
+# have been calculated. Return sum. Then determine if the result meets the qualifications of a happy number, and 
+# print if yes, otherwise it is a sad number.
 
-def is_happy(num):
-    rem = sum = 0;
+# def is_happy(num):
+#     rem = sum = 0;
 
-    while (num>0):
-        rem = num%10;
-        sum = sum + (rem*rem);
-        num = num//10;
-    return sum;
+#     while (num>0):
+#         rem = num%10;
+#         sum = sum + (rem*rem);
+#         num = num//10;
+#     return sum;
 
-num = int(input("Please enter number to check: "))
-result=num;
+# num = int(input("Please enter number to check: "))
+# result=num;
 
-while(result !=1 and result !=4):
-    result = is_happy(result)
+# while(result !=1 and result !=4):
+#     result = is_happy(result)
 
-if(result == 1):
-    print(str(num) + " is a happy number");
-else:
-    print(str(num)+ " is a sad number");
+# if(result == 1):
+#     print(str(num) + " is a happy number");
+# else:
+#     print(str(num)+ " is a sad number");
+
+# 2. Prime numbers
+# Prime number is a number that is only divisible by one and itself. Ex. 7, 3, 5. 
+# A method to print out all prime numbers between 0 and 100 would be to define the 
+# variables between the first integer and the second integer in the desired range.
+# Then you need to add the condition that the number needs to be greater than one, 
+# and if it is not divisible by a number in a range. 
+
+
+
+# for x in range(1,100):
+#     if x / x == 1 and x / 1 == x:
+#         for number in range(1,100):
+#             x != number
+
+# for x in range(2,100):
+#     i = list[range(2,100)]
+#     if x % i == 0:
+#         print(x)
+
+# def is_prime(x):
+#     if x > 1:
+#        return False
+#     for i in range(2,100):
+#         if x % i == 0:
+#             return False
+#     return True
+
+# def prime_range(num):
+#     num = random.randint <= 2 >= 100
+
+# is_prime(prime_range)
+
+# this one works
+
+# first_int = 2
+# second_int = 100
+
+# print("Prime numbers between", first_int, "and" , second_int, "are: ")
+
+# for num in range (first_int, second_int):
+#     if num > 1:
+#         for i in range(2, num):
+#             if (num % i) == 0:
+#                 break
+#         else:
+#             print(num)
+
+# Fibonacci 
+
+def fibonacci_of(n):
+    if n in {0,1}:
+        return n
+    return fibonacci_of(n-1) + fibonacci_of(n-2)
+
+[fibonacci_of(n) for n in range(1,100)]
